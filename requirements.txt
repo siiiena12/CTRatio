@@ -5,4 +5,6 @@ matplotlib==3.3.4
 torch==1.7.1
 albumentations==0.5.2
 torchvision==0.8.2
+pydicom==2.3.1
+numpyencoder==0.3.0
 
