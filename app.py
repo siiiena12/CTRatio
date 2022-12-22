@@ -295,7 +295,7 @@ if file is not None:
     TD = lungMask['length']
     cv2.putText(testImg,f'MLD : {MLD}',(cardiacMask['left'][0],cardiacMask['left'][1]-20),font,0.5,color,1,cv2.LINE_AA)
     cv2.putText(testImg,f'MRD : {MRD}',(lungMask['center']+10,cardiacMask['right'][1]-20),font,0.5,color,1,cv2.LINE_AA)
-    cv2.putText(testImg,f'TD : {TD}',(TD//2,lungMask['yMax']-20),font,0.7,(255, 255, 0),1,cv2.LINE_AA)
+    cv2.putText(testImg,f'TD : {TD}',(TD//2,lungMask['yMax']-20),font,0.7,(0, 0, 0),1,cv2.LINE_AA)
     
     st.image(testImg, caption="Image + mask", use_column_width=True)
     
