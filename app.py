@@ -288,14 +288,14 @@ if file is not None:
     
     cv2.line(testImg,(cardiacMask['left'][0],cardiacMask['left'][1]),(lungMask['center'],cardiacMask['left'][1]),color, 2)
     cv2.line(testImg,(lungMask['center'],cardiacMask['right'][1]),(cardiacMask['right'][0],cardiacMask['right'][1]),color, 2)
-    cv2.line(testImg,(lungMask['left'][0],lungMask['yMax']),(lungMask['right'][0],lungMask['yMax']),color, 2)
+    cv2.line(testImg,(lungMask['left'][0],lungMask['yMax']),(lungMask['right'][0],lungMask['yMax']),(255, 255, 0), 2)
 
     MLD = lungMask['center']-cardiacMask['left'][0]
     MRD = cardiacMask['right'][0]-lungMask['center']
     TD = lungMask['length']
     cv2.putText(testImg,f'MLD : {MLD}',(cardiacMask['left'][0],cardiacMask['left'][1]-20),font,0.5,color,1,cv2.LINE_AA)
     cv2.putText(testImg,f'MRD : {MRD}',(lungMask['center']+10,cardiacMask['right'][1]-20),font,0.5,color,1,cv2.LINE_AA)
-    cv2.putText(testImg,f'TD : {TD}',(TD//2,lungMask['yMax']-20),font,0.7,color,1,cv2.LINE_AA)
+    cv2.putText(testImg,f'TD : {TD}',(TD//2,lungMask['yMax']-20),font,0.7,(255, 255, 0),1,cv2.LINE_AA)
     
     st.image(testImg, caption="Image + mask", use_column_width=True)
     
